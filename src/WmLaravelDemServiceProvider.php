@@ -17,7 +17,7 @@ class WmLaravelDemServiceProvider extends PackageServiceProvider
          */
         $package
             ->name('wm-laravel-dem')
-            ->hasConfigFile()
+            ->hasConfigFile('wm-laravel-dem')
             ->hasViews()
             ->hasMigration('create_wm-laravel-dem_table')
             ->hasCommand(WmLaravelDemCommand::class);
