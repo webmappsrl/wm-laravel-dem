@@ -3,6 +3,7 @@
 namespace Webmappsrl\WmLaravelDem\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Facades\Schema;
 use Orchestra\Testbench\TestCase as Orchestra;
 use Webmappsrl\WmLaravelDem\WmLaravelDemServiceProvider;
 
@@ -26,11 +27,10 @@ class TestCase extends Orchestra
 
     public function getEnvironmentSetUp($app)
     {
-        config()->set('database.default', 'testing');
+        // config()->set('database.default', 'testing');
+        Schema::dropAllTables();
 
-        /*
-        $migration = include __DIR__.'/../database/migrations/create_wm-laravel-dem_table.php.stub';
+        $migration = include __DIR__.'/../database/migrations/create_wm_laravel_dem_table.php.stub';
         $migration->up();
-        */
     }
 }
